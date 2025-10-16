@@ -27,14 +27,13 @@
     
  }
 }
-@layers spaces{
+@layer spaces{
 :root{
-    --s-8px: calc(8 / 16 * 1rem);
-    --s-16px: calc(16 / 16 * 1rem);
-    --s-24px: calc(24 / 16 * 1rem);
-    --s-40px: calc(40 / 16 * 1rem);
+--s-8px: calc(8 / 16 * 1rem);
+--s-16px: calc(16 / 16 * 1rem);
+--s-24px: calc(24 / 16 * 1rem);
+--s-40px: calc(40 / 16 * 1rem);
 }
-
 }
 @layer typography{
     :root{
@@ -152,6 +151,12 @@ select {
         line-height: var(--line-height-115);
         letter-spacing: -0.25px;
     }
+    .card__description span{
+        font-size: var(--fs-32px);
+        font-weight: 700;
+        line-height: var(--line-height-115);
+        letter-spacing: -0.4px;
+    }
     .reasons{
         list-style: none;
     }
@@ -161,4 +166,71 @@ select {
         
     }
     
+}
+@layer layout{
+.cards{
+  display: grid;
+  grid-template-columns:1fr;
+}
+.card--white{
+    background-color: var(--white);
+}
+.card:first-child{
+    padding: var(--s-40px);
+}
+.card:first-child .card__subtitle{
+    padding-block: var(--s-24px) var(--s-8px);
+    color:var(--green-400);
+}
+.card--teal-500{
+    background-color: var(--teal-500);
+}
+.card:nth-child(2){
+    padding-inline: var(--s-40px);
+    color: var(--white);
+    
+}
+.card:nth-child(2) .card__subtitle{
+    padding-block: var(--s-24px) var(--fs-16px);
+}
+.btn-sign{
+    display: block;
+    margin-inline: auto;
+    margin-block: var(--s-24px);
+    background-color: var(--green-400);
+    border: none;
+    padding: 0.5em 5em;
+    box-shadow:0 3px 8px -2px hsl(0, 0%, 0%);
+    
+}
+.card:nth-child(3){
+    padding: var(--s-24px) var(--s-40px);
+    color: var(--white);
+}
+.card:nth-child(3) .card__subtitle{
+    padding-block-end: var(--s-16px);
+}
+.card--teal-400{
+    background-color: var(--teal-400);
+}
+
+
+    @media(width>375px){
+        main{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100dvh;
+        }
+    .cards{
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        max-width: calc( 635 / 16 * 1rem);
+    }
+    .card:first-child{
+        grid-column: 1/3;
+    }
+    }
+    
+
 }
