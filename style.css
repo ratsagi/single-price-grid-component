@@ -201,7 +201,11 @@ select {
     border: none;
     padding: 0.5em 5em;
     box-shadow:0 3px 8px -2px hsl(0, 0%, 0%);
+    cursor: pointer;
     
+}
+.btn-sign:hover{
+  background-color: var(--teal-100);
 }
 .card:nth-child(3){
     padding: var(--s-24px) var(--s-40px);
