@@ -219,7 +219,7 @@ select {
 }
 
 
-    @media(width>375px){
+    @media(width>=375px){
         main{
             display: flex;
             justify-content: center;
